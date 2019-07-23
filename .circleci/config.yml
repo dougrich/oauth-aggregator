@@ -1,0 +1,15 @@
+version: 2.1
+orbs:
+  docker-publish: cricleci/docker-publish@1.0.0
+workflows:
+  buildpush:
+    jobs:
+      - docker-publish/publish:
+          filters:
+            branches:
+              only: master
+      - docker-publish/publish:
+          deploy: false
+          filters:
+            branches:
+              ignore: master

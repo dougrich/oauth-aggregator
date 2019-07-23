@@ -1,0 +1,11 @@
+The following files contain SVG of logos from their respective companies, inlined for technical reasons.
+
+~/src/plugins/authentication/google/view.hbs
+~/src/plugins/authentication/microsoft/view.hbs
+~/src/plugins/authentication/reddit/view.hbs
+
+These graphics are taken with minimal alteration from their respective companies branding guidelines, linked in the README.
+
+Alterations are done in keeping with the guidelines presented:
+- changing the size to be consistent with other logos
+- optimizing the SVG for technical reasons

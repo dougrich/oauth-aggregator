@@ -1,0 +1,10 @@
+<h1>Signed out</h1>
+<p>You can return to the application now. This window will close automatically.</p>
+<script type='text/javascript'>
+  window.opener.postMessage('account-state-change', window.location.origin)
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      window.close()
+    }, 10000)
+  })
+</script>

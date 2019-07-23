@@ -1,0 +1,15 @@
+<h1>Sign in Complete</h1>
+<p id='please-wait'>Please wait...</p>
+<p id='done' style='display:none;'>You can return to the application now. This window will close automatically.</p>
+<script type='text/javascript'>
+  window.opener.postMessage('account-state-change', window.location.origin)
+  const wait = document.getElementById('please-wait')
+  const done = document.getElementById('done')
+  requestAnimationFrame(() => {
+    wait.style.display = 'none';
+    done.style.display = 'initial';
+    setTimeout(() => {
+      window.close()
+    }, 10000)
+  })
+</script>

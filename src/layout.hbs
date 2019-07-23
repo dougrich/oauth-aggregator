@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}} | {{config.brand}}</title>
+    <meta name="viewport" content="width=device-width">
+    <style>
+      body {
+        background: repeating-linear-gradient(
+          45deg,
+          #FFF,
+          #FFF 7px,
+          #F5F5F5 7px,
+          #F5F5F5 10px,
+          #FFF 10px
+        );
+        height: 100vh;
+        width: 100vw;
+        font-family: sans-serif;
+      }
+
+      html, body { padding: 0; margin: 0; min-width: 320px; }
+
+      .container {
+        width: calc(100% - 32px);
+        min-width: 320px;
+        max-width: 432px;
+        box-sizing: border-box;
+        padding: 16px;
+        background-color: white;
+        border: 3px solid #F5F5F5;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .container:before, .container:after {
+        content: '';
+        width: 0px;
+        height: 0px;
+        transform: translate(-50%, -50%) rotate(45deg);
+        border: 50px solid #F5F5F5;
+        position: absolute;
+        left: 50%;
+        pointer-events: none;
+      }
+
+      .container:before {
+        top: 0px;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+      }
+
+      .container:after {
+        top: 100%;
+        border-left-color: transparent;
+        border-top-color: transparent;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      footer {
+        margin-top: 2em;
+        text-align: center;
+        font-size: 12px;
+      }
+
+      .standard-link {
+        text-decoration: none;
+        color: #333;
+        line-height: 1.5em;
+        padding: 0em 0.5em;
+        margin: 0em 1em;
+        position: relative;
+        display: inline-block;
+        transition: 200ms ease-in-out color;
+      }
+
+      .standard-link::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: #333;
+        transition: 200ms ease-in-out transform, 200ms ease-in-out background-color;
+        transform: scale(0.5,1);
+      }
+
+      .standard-link:hover::after,
+      .standard-link:focus::after {
+        transform: scale(1,1);
+        background-color: #d00;
+      }
+
+      .standard-link:focus {
+        outline: 2px dashed #d00;
+      }
+
+      .standard-link:hover,
+      .standard-link:focus {
+        color: #d00;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      {{{body}}}
+      <footer>
+        <a class="standard-link" href="{{config.privacy}}">Terms and Privacy</a>
+      </footer>
+    </section>
+  </body>
+</html>
