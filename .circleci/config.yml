@@ -5,6 +5,7 @@ workflows:
   buildpush:
     jobs:
       - docker-publish/publish:
+          tag: latest
           filters:
             branches:
               only: master
