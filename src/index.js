@@ -9,7 +9,7 @@ const plugins = [
   require('./plugins/signin'),
 ]
 
-const config = JSON.parse(fs.readFileSync('./config.json', 'utf8'))
+const config = JSON.parse(fs.readFileSync(process.env.AUTH_CONFIG || './config.json', 'utf8'))
 
 const { isValid, warnings, errors } = verify(plugins, config)
 for (const w of warnings) {
