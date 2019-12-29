@@ -16,7 +16,7 @@
     "@dougrich/read-cache": "^0.1.1",
     "axios": "^0.19.0",
     "express": "^4.17.1",
-    "handlebars": "^4.1.2",
+    "handlebars": "^4.3.0",
     "jsonwebtoken": "^8.5.1",
     "query-string": "^6.8.1"
   }
